@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Target, Smartphone, Code2, Sparkles, Globe, Megaphone, Wand2, Compass } from 'lucide-react';
+import { Target, Smartphone, Code2, Sparkles, Globe, Megaphone, Wand2, Compass } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const LearningRoadmapSection: React.FC = () => {
@@ -8,36 +8,36 @@ export const LearningRoadmapSection: React.FC = () => {
   const getTopicIcon = (topic: string) => {
     switch (topic) {
       case 'Android App Development':
-        return <Smartphone className="w-5 h-5 text-emerald-500" />;
+        return <Smartphone className="w-5 h-5 text-[#D98A84]" />;
       case 'Python Development':
-        return <Code2 className="w-5 h-5 text-violet-500" />;
+        return <Code2 className="w-5 h-5 text-[#E89D97]" />;
       case 'AI and Generative AI':
-        return <Sparkles className="w-5 h-5 text-amber-500" />;
+        return <Sparkles className="w-5 h-5 text-[#D98A84]" />;
       case 'Web Development':
-        return <Globe className="w-5 h-5 text-blue-500" />;
+        return <Globe className="w-5 h-5 text-[#E89D97]" />;
       case 'Digital Marketing':
-        return <Megaphone className="w-5 h-5 text-pink-500" />;
+        return <Megaphone className="w-5 h-5 text-[#D98A84]" />;
       case 'Creative Technology':
-        return <Wand2 className="w-5 h-5 text-purple-500" />;
+        return <Wand2 className="w-5 h-5 text-[#E89D97]" />;
       default:
-        return <Compass className="w-5 h-5 text-slate-500" />;
+        return <Compass className="w-5 h-5 text-[#D5C7C1]" />;
     }
   };
 
   return (
-    <section id="learning" className="py-20 px-4 sm:px-6 relative border-t border-slate-200/80 dark:border-slate-800/80">
+    <section id="learning" className="py-20 px-4 sm:px-6 relative border-t border-[#D98A84]/20 bg-[#161015]/60">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400 mb-2">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#D98A84] mb-2">
             <span>06</span>
             <span aria-hidden="true">/</span>
-            <span>Continuous Curiosity</span>
+            <span>CONTINUOUS CURIOSITY</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white font-heading">
+          <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#F8EFEB]">
             What I'm Learning
           </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-xl">
+          <p className="text-sm text-[#D5C7C1] mt-2 max-w-xl">
             A transparent view of active study areas, coding experiments, and future technology horizons.
           </p>
         </div>
@@ -47,37 +47,37 @@ export const LearningRoadmapSection: React.FC = () => {
           {learningRoadmap.map((item) => (
             <div
               key={item.id}
-              className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-violet-500/40 dark:hover:border-violet-500/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+              className="p-6 rounded-2xl bg-[#1B131A] border border-[#D98A84]/20 hover:border-[#D98A84]/50 shadow-md hover:shadow-xl transition-all flex flex-col justify-between group"
             >
               <div>
                 {/* Header: Icon & unboxed status text */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-[#231A22] border border-[#D98A84]/30 flex items-center justify-center group-hover:scale-105 transition-transform">
                     {getTopicIcon(item.topic)}
                   </div>
-                  <span className="text-xs font-medium text-violet-600 dark:text-violet-400">
+                  <span className="text-xs font-mono text-[#D98A84]">
                     {item.status}
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-slate-900 dark:text-white font-heading mb-2">
+                <h3 className="text-base font-bold font-mono text-[#F8EFEB] mb-2">
                   {item.topic}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm text-[#D5C7C1] leading-relaxed mb-4">
                   {item.description}
                 </p>
               </div>
 
               {/* Next Milestone Box */}
-              <div className="pt-3.5 border-t border-slate-100 dark:border-slate-800/80">
-                <div className="flex items-start gap-2 text-xs text-slate-500 dark:text-slate-400">
-                  <Target className="w-3.5 h-3.5 text-violet-500 shrink-0 mt-0.5" />
+              <div className="pt-3.5 border-t border-[#D98A84]/15">
+                <div className="flex items-start gap-2 text-xs text-[#D5C7C1]">
+                  <Target className="w-3.5 h-3.5 text-[#D98A84] shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-slate-700 dark:text-slate-200 block text-[11px]">
+                    <span className="font-semibold font-mono text-[#F8EFEB] block text-[11px]">
                       Immediate Target:
                     </span>
-                    <span className="text-[11px] leading-snug">{item.nextGoal}</span>
+                    <span className="text-[11px] leading-snug text-[#D5C7C1]/80">{item.nextGoal}</span>
                   </div>
                 </div>
               </div>

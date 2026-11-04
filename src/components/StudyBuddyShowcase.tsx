@@ -4,15 +4,12 @@ import {
   Play,
   RotateCcw,
   Sparkles,
-  ExternalLink,
   Info,
-  Layers,
-  Smartphone,
-  Cpu,
-  Package,
   CheckCircle,
   X,
   Code2,
+  Cpu,
+  Layers,
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
@@ -22,9 +19,9 @@ export const StudyBuddyShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'tracker' | 'terminal' | 'packages'>('tracker');
   const [consoleLogs, setConsoleLogs] = useState<string[]>([
     '>>> Initializing Study Buddy Android Python Runtime v0.2...',
-    '>>> Loading student profile: Diya Karki (Semester II)',
-    '>>> Current Task: "Computer Systems & Python OOP Assignment"',
-    '>>> Status: Focus session ready. Click "Execute Script" to test.',
+    '>>> Loading student profile: Diya Karki (Far Western University)',
+    '>>> Current Module: "Computer Engineering & Python OOP Systems"',
+    '>>> Status: Focus session ready. Click "Run Command" to simulate.',
   ]);
   const [isExecuting, setIsExecuting] = useState(false);
 
@@ -34,7 +31,7 @@ export const StudyBuddyShowcase: React.FC = () => {
     if (mode === 'tracker') {
       setConsoleLogs((prev) => [
         ...prev,
-        '>>> python run_session.py --subject "Data Structures" --duration 45m',
+        '>>> python run_session.py --subject "Data Structures & OOP" --duration 45m',
         '⏳ Starting Pomodoro focus timer: [45:00]',
         '📊 Logging study session to local SQLite db...',
         '✅ Session verified: +45 mins recorded for Computer Engineering.',
@@ -68,32 +65,32 @@ export const StudyBuddyShowcase: React.FC = () => {
   };
 
   return (
-    <section id="study-buddy" className="py-20 px-4 sm:px-6 relative border-t border-slate-200/80 dark:border-slate-800/80">
+    <section id="study-buddy" className="py-20 px-4 sm:px-6 relative border-t border-[#D98A84]/20 bg-[#120D11]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400 mb-2">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#D98A84] mb-2">
             <span>03</span>
             <span aria-hidden="true">/</span>
-            <span>Featured Engineering Project</span>
+            <span>FEATURED ENGINEERING PROJECT</span>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white font-heading">
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#F8EFEB]">
               {featuredProject.title}
             </h2>
-            <div className="text-xs text-slate-500 dark:text-slate-400">
-              <span>Flagship Project</span>
+            <div className="text-xs font-mono text-[#D5C7C1]">
+              <span>Flagship Architecture</span>
               <span aria-hidden="true" className="mx-1.5">·</span>
-              <span className="text-violet-600 dark:text-violet-400 font-medium">In Active Development</span>
+              <span className="text-[#D98A84] font-medium">In Active Research & Prototyping</span>
             </div>
           </div>
         </div>
 
         {/* Project Hero Bento Box */}
-        <div className="rounded-3xl bg-linear-to-b from-slate-900 via-slate-950 to-slate-950 text-white border border-slate-800 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-b from-[#1B131A] via-[#161015] to-[#120D11] text-[#F8EFEB] border border-[#D98A84]/30 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           {/* Subtle Ambient Background Gradient */}
           <div
-            className="absolute -top-32 -right-32 w-96 h-96 bg-violet-600/15 rounded-full blur-3xl pointer-events-none"
+            className="absolute -top-32 -right-32 w-96 h-96 bg-[#D98A84]/10 rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"
           />
 
@@ -101,41 +98,43 @@ export const StudyBuddyShowcase: React.FC = () => {
             {/* Left Column: Project Overview & Specs */}
             <div className="lg:col-span-7 space-y-6">
               {/* Technologies unboxed list */}
-              <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400">
-                <span className="text-slate-200 font-semibold">Tech Focus:</span>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[#D5C7C1]">
+                <span className="text-[#D98A84] font-semibold">Tech Focus:</span>
                 {featuredProject.techStack.map((tech, idx) => (
                   <React.Fragment key={tech}>
-                    {idx > 0 && <span aria-hidden="true" className="text-slate-600">·</span>}
-                    <span className="text-violet-300 font-mono text-[11px]">{tech}</span>
+                    {idx > 0 && <span aria-hidden="true" className="text-[#D98A84]/40">·</span>}
+                    <span className="text-[#F8EFEB] font-mono text-[11px]">{tech}</span>
                   </React.Fragment>
                 ))}
               </div>
 
               {/* Tagline & Goal */}
               <div className="space-y-3">
-                <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#F8EFEB]">
                   {featuredProject.tagline}
                 </h3>
-                <div className="p-4 rounded-xl bg-violet-950/40 border border-violet-800/40 text-xs sm:text-sm text-violet-200 leading-relaxed">
-                  <span className="font-semibold text-white block mb-1">Architecture Goal:</span>
+                <div className="p-4 rounded-xl bg-[#231A22] border border-[#D98A84]/30 text-xs sm:text-sm text-[#E89D97] leading-relaxed">
+                  <span className="font-semibold text-[#F8EFEB] font-mono text-xs block mb-1">
+                    [ARCHITECTURE GOAL]
+                  </span>
                   {featuredProject.primaryGoal}
                 </div>
               </div>
 
               {/* Full Description */}
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#D5C7C1] leading-relaxed">
                 {featuredProject.fullDescription}
               </p>
 
               {/* Key Features Bullet Matrix */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {featuredProject.keyPillars.map((pillar) => (
-                  <div key={pillar.title} className="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                    <h5 className="text-xs font-semibold text-white mb-1 flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-violet-400 shrink-0" />
+                  <div key={pillar.title} className="p-3.5 rounded-xl bg-[#1B131A] border border-[#D98A84]/20">
+                    <h5 className="text-xs font-semibold font-mono text-[#F8EFEB] mb-1 flex items-center gap-1.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-[#D98A84] shrink-0" />
                       <span>{pillar.title}</span>
                     </h5>
-                    <p className="text-[11px] text-slate-400 leading-relaxed">
+                    <p className="text-[11px] text-[#D5C7C1]/80 leading-relaxed">
                       {pillar.detail}
                     </p>
                   </div>
@@ -146,7 +145,7 @@ export const StudyBuddyShowcase: React.FC = () => {
               <div className="flex flex-wrap items-center gap-3 pt-4">
                 <button
                   onClick={() => setShowDetailsModal(true)}
-                  className="px-5 py-2.5 text-xs font-semibold text-white bg-violet-600 hover:bg-violet-500 rounded-xl transition-all shadow-md shadow-violet-600/30 inline-flex items-center gap-2"
+                  className="px-5 py-2.5 text-xs font-semibold text-[#120D11] bg-gradient-to-r from-[#D98A84] to-[#E89D97] hover:brightness-110 rounded-xl transition-all shadow-md shadow-[#D98A84]/20 inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Info className="w-4 h-4" />
                   <span>Learn More</span>
@@ -154,9 +153,9 @@ export const StudyBuddyShowcase: React.FC = () => {
 
                 <button
                   onClick={() => runSimulator('tracker')}
-                  className="px-5 py-2.5 text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-xl transition-colors border border-slate-700 inline-flex items-center gap-2"
+                  className="px-5 py-2.5 text-xs font-semibold font-mono text-[#D5C7C1] hover:text-[#F8EFEB] bg-[#231A22] hover:bg-[#2D212A] rounded-xl transition-colors border border-[#D98A84]/30 inline-flex items-center gap-2"
                 >
-                  <Play className="w-3.5 h-3.5 text-emerald-400" />
+                  <Play className="w-3.5 h-3.5 text-[#D98A84]" />
                   <span>View Project Simulation</span>
                 </button>
               </div>
@@ -164,19 +163,19 @@ export const StudyBuddyShowcase: React.FC = () => {
 
             {/* Right Column: Live Android Python IDE Simulator Console */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden shadow-2xl flex flex-col">
+              <div className="rounded-2xl bg-[#0F0A0D] border border-[#D98A84]/30 overflow-hidden shadow-2xl flex flex-col">
                 {/* Console Window Topbar */}
-                <div className="px-4 py-3 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                <div className="px-4 py-3 bg-[#1B131A] border-b border-[#D98A84]/20 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                    <span className="text-xs font-mono text-slate-400 ml-2">study_buddy_ide.py</span>
+                    <div className="w-3 h-3 rounded-full bg-[#8E3E47]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#D98A84]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#E89D97]"></div>
+                    <span className="text-xs font-mono text-[#D5C7C1] ml-2">study_buddy_ide.py</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={clearLogs}
-                      className="p-1 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded transition-colors"
+                      className="p-1 text-[#D5C7C1]/70 hover:text-[#F8EFEB] rounded transition-colors"
                       title="Clear console"
                     >
                       <RotateCcw className="w-3.5 h-3.5" />
@@ -185,7 +184,7 @@ export const StudyBuddyShowcase: React.FC = () => {
                 </div>
 
                 {/* Console Navigation Modes */}
-                <div className="px-4 py-2 bg-slate-900/50 border-b border-slate-800 flex items-center gap-2 text-xs">
+                <div className="px-4 py-2 bg-[#161015] border-b border-[#D98A84]/20 flex items-center gap-2 text-xs">
                   <button
                     onClick={() => {
                       setActiveTab('tracker');
@@ -193,8 +192,8 @@ export const StudyBuddyShowcase: React.FC = () => {
                     }}
                     className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors ${
                       activeTab === 'tracker'
-                        ? 'bg-violet-600/30 text-violet-300 border border-violet-500/50 font-medium'
-                        : 'text-slate-400 hover:text-slate-200'
+                        ? 'bg-[#D98A84]/20 text-[#E89D97] border border-[#D98A84]/40 font-medium'
+                        : 'text-[#D5C7C1]/70 hover:text-[#F8EFEB]'
                     }`}
                   >
                     1. Study Session
@@ -206,8 +205,8 @@ export const StudyBuddyShowcase: React.FC = () => {
                     }}
                     className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors ${
                       activeTab === 'packages'
-                        ? 'bg-violet-600/30 text-violet-300 border border-violet-500/50 font-medium'
-                        : 'text-slate-400 hover:text-slate-200'
+                        ? 'bg-[#D98A84]/20 text-[#E89D97] border border-[#D98A84]/40 font-medium'
+                        : 'text-[#D5C7C1]/70 hover:text-[#F8EFEB]'
                     }`}
                   >
                     2. Pip Installer
@@ -219,8 +218,8 @@ export const StudyBuddyShowcase: React.FC = () => {
                     }}
                     className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors ${
                       activeTab === 'terminal'
-                        ? 'bg-violet-600/30 text-violet-300 border border-violet-500/50 font-medium'
-                        : 'text-slate-400 hover:text-slate-200'
+                        ? 'bg-[#D98A84]/20 text-[#E89D97] border border-[#D98A84]/40 font-medium'
+                        : 'text-[#D5C7C1]/70 hover:text-[#F8EFEB]'
                     }`}
                   >
                     3. Analytics
@@ -228,39 +227,39 @@ export const StudyBuddyShowcase: React.FC = () => {
                 </div>
 
                 {/* Terminal Stream Body */}
-                <div className="p-4 font-mono text-xs text-slate-300 bg-slate-950 h-64 overflow-y-auto space-y-1.5">
+                <div className="p-4 font-mono text-xs text-[#D5C7C1] bg-[#0F0A0D] h-64 overflow-y-auto space-y-1.5">
                   {consoleLogs.map((log, index) => (
                     <div
                       key={index}
                       className={`leading-relaxed ${
                         log.startsWith('>>>')
-                          ? 'text-violet-400 font-semibold'
+                          ? 'text-[#D98A84] font-semibold'
                           : log.startsWith('✅')
-                          ? 'text-emerald-400'
+                          ? 'text-[#E89D97]'
                           : log.startsWith('📊') || log.startsWith('🎯')
-                          ? 'text-amber-300'
-                          : 'text-slate-300'
+                          ? 'text-[#F8EFEB]'
+                          : 'text-[#D5C7C1]/90'
                       }`}
                     >
                       {log}
                     </div>
                   ))}
                   {isExecuting && (
-                    <div className="text-xs text-violet-400 animate-pulse">
+                    <div className="text-xs text-[#E89D97] animate-pulse font-mono">
                       ... executing command in virtual Android environment ...
                     </div>
                   )}
                 </div>
 
                 {/* Terminal Footer Action */}
-                <div className="px-4 py-3 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-slate-400">Environment: Android ARM64 Runtime</span>
+                <div className="px-4 py-3 bg-[#1B131A] border-t border-[#D98A84]/20 flex items-center justify-between text-xs">
+                  <span className="text-[11px] font-mono text-[#D5C7C1]/70">Android ARM64 Runtime</span>
                   <button
                     onClick={() => runSimulator(activeTab)}
                     disabled={isExecuting}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-[11px] font-mono transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#D98A84] hover:bg-[#E89D97] text-[#120D11] rounded text-[11px] font-mono font-bold transition-colors cursor-pointer"
                   >
-                    <Play className="w-3 h-3 fill-white" />
+                    <Play className="w-3 h-3 fill-[#120D11]" />
                     <span>Run Command</span>
                   </button>
                 </div>
@@ -275,40 +274,40 @@ export const StudyBuddyShowcase: React.FC = () => {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#120D11]/85 backdrop-blur-md"
           onClick={() => setShowDetailsModal(false)}
         >
           <div
-            className="relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden"
+            className="relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl bg-[#1B131A] border border-[#D98A84]/30 shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#D98A84]/20">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-violet-100 dark:bg-violet-950 text-violet-600 dark:text-violet-400 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#231A22] border border-[#D98A84]/30 text-[#D98A84] flex items-center justify-center">
                   <Code2 className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-base font-bold font-serif text-[#F8EFEB]">
                     Study Buddy — Technical Architecture
                   </h3>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                  <span className="text-xs font-mono text-[#D98A84]">
                     Designed & conceptualized by Diya Karki
                   </span>
                 </div>
               </div>
               <button
                 onClick={() => setShowDetailsModal(false)}
-                className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg"
+                className="p-1 text-[#D5C7C1] hover:text-[#F8EFEB] rounded-lg"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 overflow-y-auto space-y-6 text-sm text-slate-600 dark:text-slate-300">
+            <div className="p-6 overflow-y-auto space-y-6 text-sm text-[#D5C7C1]">
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400 mb-2">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-[#D98A84] mb-2">
                   System Concept & Inspiration
                 </h4>
                 <p className="leading-relaxed">
@@ -317,44 +316,44 @@ export const StudyBuddyShowcase: React.FC = () => {
               </div>
 
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400 mb-2">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-[#D98A84] mb-2">
                   Key Planned Modules
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                    <span className="font-semibold text-slate-900 dark:text-white block">1. Task & Session Engine</span>
-                    <span className="text-slate-500 dark:text-slate-400">OOP classes managing assignments, Pomodoro states, and due-date sorting.</span>
+                  <div className="p-3 rounded-lg bg-[#231A22] border border-[#D98A84]/20">
+                    <span className="font-semibold font-mono text-[#F8EFEB] block">1. Task & Session Engine</span>
+                    <span className="text-[#D5C7C1]/80">OOP classes managing assignments, Pomodoro states, and due-date sorting.</span>
                   </div>
-                  <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                    <span className="font-semibold text-slate-900 dark:text-white block">2. Android Runtime Bridge</span>
-                    <span className="text-slate-500 dark:text-slate-400">Embedding Python binaries (e.g., Chaquopy or Termux subprocess architecture) within Android.</span>
+                  <div className="p-3 rounded-lg bg-[#231A22] border border-[#D98A84]/20">
+                    <span className="font-semibold font-mono text-[#F8EFEB] block">2. Android Runtime Bridge</span>
+                    <span className="text-[#D5C7C1]/80">Embedding Python binaries (e.g., Chaquopy or Termux subprocess architecture) within Android.</span>
                   </div>
-                  <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                    <span className="font-semibold text-slate-900 dark:text-white block">3. Isolated Pip Manager</span>
-                    <span className="text-slate-500 dark:text-slate-400">Allowing students to install mathematical and computational libraries offline.</span>
+                  <div className="p-3 rounded-lg bg-[#231A22] border border-[#D98A84]/20">
+                    <span className="font-semibold font-mono text-[#F8EFEB] block">3. Isolated Pip Manager</span>
+                    <span className="text-[#D5C7C1]/80">Allowing students to install mathematical and computational libraries offline.</span>
                   </div>
-                  <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                    <span className="font-semibold text-slate-900 dark:text-white block">4. Study Analytics</span>
-                    <span className="text-slate-500 dark:text-slate-400">Weekly progress plots, learning curves, and study habit consistency metrics.</span>
+                  <div className="p-3 rounded-lg bg-[#231A22] border border-[#D98A84]/20">
+                    <span className="font-semibold font-mono text-[#F8EFEB] block">4. Study Analytics</span>
+                    <span className="text-[#D5C7C1]/80">Weekly progress plots, learning curves, and study habit consistency metrics.</span>
                   </div>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 text-xs">
-                <span className="font-semibold text-slate-900 dark:text-white block mb-1">
+              <div className="p-4 rounded-xl bg-[#231A22] border border-[#D98A84]/25 text-xs">
+                <span className="font-semibold font-mono text-[#F8EFEB] block mb-1">
                   How to inspect or contribute:
                 </span>
-                <p className="text-slate-500 dark:text-slate-400">
+                <p className="text-[#D5C7C1]/80">
                   This project is currently in the active prototype and research stage at Far Western University. For questions, collaboration, or code review, connect with Diya directly via the contact form below.
                 </p>
               </div>
             </div>
 
             {/* Modal Footer */}
-            <div className="px-6 py-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex justify-end">
+            <div className="px-6 py-3 border-t border-[#D98A84]/20 bg-[#161015] flex justify-end">
               <button
                 onClick={() => setShowDetailsModal(false)}
-                className="px-4 py-2 text-xs font-semibold text-white bg-violet-600 rounded-lg hover:bg-violet-500 transition-colors"
+                className="px-4 py-2 text-xs font-semibold text-[#120D11] bg-[#D98A84] rounded-lg hover:bg-[#E89D97] transition-colors"
               >
                 Close Overview
               </button>

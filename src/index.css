@@ -3,42 +3,80 @@
 
 @layer base {
   :root {
+    --font-serif: 'Playfair Display', serif;
+    --font-script: 'Cormorant Garamond', serif;
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'DM Sans', sans-serif;
     --font-code: 'JetBrains Mono', monospace;
+
+    /* High-Editorial Palette from Reference */
+    --color-espresso: #120D11;
+    --color-espresso-surface: #1B131A;
+    --color-espresso-card: #231A22;
+    --color-espresso-border: rgba(217, 138, 132, 0.18);
+    --color-terracotta: #D98A84;
+    --color-blush: #E89D97;
+    --color-wine: #8E3E47;
+    --color-cream: #F8EFEB;
+    --color-cream-muted: #D5C7C1;
   }
 
   body {
+    background-color: #120D11;
+    color: #F8EFEB;
     font-family: var(--font-body);
-    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .font-heading {
     font-family: var(--font-heading);
   }
 
-  code, pre, .font-mono {
+  .font-mono {
     font-family: var(--font-code);
   }
 }
 
-/* Custom subtle glassmorphism utilities */
-.glass-panel {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Blueprint Grid Background Pattern */
+.bg-blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(217, 138, 132, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 138, 132, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Smooth custom scrollbar */
+/* Spinning Stamp Animation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 22s linear infinite;
+}
+
+/* Custom smooth scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #120D11;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(217, 138, 132, 0.3);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(217, 138, 132, 0.6);
 }
